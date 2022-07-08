@@ -16,7 +16,7 @@ static uint8 ascRxBuffer[4][ASC_RX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
 hsic_err_t Hsic_uartInit(IfxAsclin_Tx_Out tx, IfxAsclin_Rx_In rx, uint32 baudrate, hsic_srctos_t srctos)
 {
     if(tx.module!=rx.module)return HSIC_ERR_INVALID_ARG;
-    uint8 i = 0xff&(((uint32)rx.module - (uint32)&MODULE_ASCLIN0)>>2);
+    uint8 i = 0xff&(((uint32)rx.module - (uint32)&MODULE_ASCLIN0)>>8);
     IfxAsclin_Asc_Config ascConfig;
     IfxAsclin_Asc_initModuleConfig(&ascConfig, tx.module);
     ascConfig.baudrate.prescaler = 1;

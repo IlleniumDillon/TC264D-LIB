@@ -15,7 +15,8 @@ IfxQspi_SpiMaster_Channel Hsic_hwSPIInit(IfxQspi_Mrst_In miso, IfxQspi_Mtsr_Out 
     memset(&spiMasterChannel,0,sizeof(spiMasterChannel));
     IfxQspi_SpiMaster_ChannelConfig spiMasterChannelConfig;
     if(miso.module!=mosi.module||miso.module!=sclk.module||miso.module!=cs.module) return spiMasterChannel;
-    uint8 i = 0xff&(((uint32)miso.module-0xF0001C00u)>>2);
+    uint32 t = (uint32)miso.module-0xF0001C00u;
+    uint8 i = 0xff&(t>>8);
     if(spi[i].qspi!=NULL)
     {
         goto INITQSPICH;

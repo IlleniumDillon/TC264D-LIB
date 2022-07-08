@@ -38,7 +38,7 @@
 /*
  * \brief 定时器中断触发时间
  */
-#define INT_MS_CMPSTM0_SR0 500
+#define INT_MS_CMPSTM0_SR0 20
 #define INT_MS_CMPSTM0_SR1 5
 #define INT_MS_CMPSTM1_SR0 5
 #define INT_MS_CMPSTM1_SR1 5
