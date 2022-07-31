@@ -81,7 +81,7 @@ int core0_main(void)
     Hsic_stmTimIrqInit(STM1,COMPARATOR0,SRC_CPU0,INT_PRIO_CMPSTM1_SR0,INT_MS_CMPSTM0_SR0,FALSE);
     Hsic_stmTimIrqInit(STM1,COMPARATOR1,SRC_CPU0,INT_PRIO_CMPSTM1_SR1,INT_MS_CMPSTM0_SR0,FALSE);*/
 
-    //Hsic_uartInit(IfxAsclin0_TX_P14_0_OUT,IfxAsclin0_RXA_P14_1_IN,115200,SRC_CPU0);
+    Hsic_uartInit(IfxAsclin0_TX_P14_0_OUT,IfxAsclin0_RXA_P14_1_IN,115200,SRC_CPU0);
 
     //Hsic_hwIICInit(IfxI2c0_SCL_P02_5_INOUT,IfxI2c0_SDA_P02_4_INOUT,1000);
     //hsic_swiic_dev_t dev;
@@ -101,6 +101,7 @@ int core0_main(void)
     OLED_init(IfxQspi2_MRSTA_P15_4_IN,IfxQspi2_MTSR_P15_5_OUT,IfxQspi2_SCLK_P15_3_OUT,IfxQspi2_SLSO0_P15_2_OUT,IfxPort_P15_1,IfxPort_P15_0,TRUE);
     while(1)
     {
+        HSIC_ASSERT(1>2);
         //static int i = 0;
         uint32 time = Hsic_systickGet(STM0);
         for(int i = 0; i < 4096;i++)

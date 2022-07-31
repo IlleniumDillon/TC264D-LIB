@@ -54,6 +54,6 @@
 
 #define SET_VCOMH_DESELECT_LEVEL    (0XDB)      //双字节命令，设置VCOMH反压值
 
-#define NOP                         (0XE3)      //空指令
+#define NOPE                         (0XE3)      //空指令
 
 #endif /* DRIVER_OLED_OLED_SSD1306_CMD_H_ */
